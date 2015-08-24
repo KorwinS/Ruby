@@ -37,3 +37,4 @@ dog.report_age
 dog.talk
 print "Tell the dog where to go! Where should the dog run? "
 dog.move(gets.chomp)
+puts "#{@Name} is a good dog!"
