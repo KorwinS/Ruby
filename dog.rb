@@ -32,6 +32,7 @@ class Dog
       puts "#{@name} is a good dog!"
     else
       puts "#{@name} is a bad dog."
+    end
   end
 
 end
