@@ -26,6 +26,14 @@ class Dog
   def report_age
     puts "#{@name} is #{@age} years old."
   end
+
+  def good_dog(value)
+    if value == "yes"
+      puts "#{@name} is a good dog!"
+    else
+      puts "#{@name} is a bad dog."
+  end
+
 end
 
 dog = Dog.new
@@ -37,4 +45,5 @@ dog.report_age
 dog.talk
 print "Tell the dog where to go! Where should the dog run? "
 dog.move(gets.chomp)
-puts "#{@Name} is a good dog!"
+print "Is #{dog.name} a good dog? "
+dog.good_dog(gets.chomp)
