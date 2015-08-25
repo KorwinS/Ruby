@@ -17,7 +17,7 @@ class Vehicle
   end
 
   def mileage
-    return @odmeter / @gas_used
+    return @odometer / @gas_used
   end
 
 end
@@ -37,3 +37,6 @@ f_150.sound_horn
 
 mustang = Car.new
 mustang.steer
+mustang.odometer = 1400
+mustang.gas_used = 40
+puts "This car gets #{mustang.mileage} mpg!"
