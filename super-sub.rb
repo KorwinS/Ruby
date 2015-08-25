@@ -19,5 +19,21 @@ class Vehicle
   def mileage
     return @odmeter / @gas_used
   end
-  
+
 end
+
+class Car < Vehicle
+end
+
+class Truck < Vehicle
+end
+
+class Motorcycle < Vehicle
+end
+
+f_150 = Truck.new
+f_150.accelerate
+f_150.sound_horn
+
+mustang = Car.new
+mustang.steer
