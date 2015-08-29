@@ -20,8 +20,8 @@ class Employee
 
 #init the class
   def initialize(name = "Anon", salary = 0.0)
-    @name = name
-    @salary = salary
+    self.name = name
+    self.salary = salary
 
   end
 
@@ -42,6 +42,6 @@ blake.salary = 140000
 blake.print_pay_stub
 
 carl = Employee.new
-carl.name = "Carl Cooper"
-carl.salary = 40000
+#carl.name = "Carl Cooper"
+#carl.salary = 40000
 carl.print_pay_stub
