@@ -31,5 +31,17 @@ class SolarBot < Robot
     puts "#{@name} deploys solar panel"
     super
   end
-  
+
 end
+
+tank = TankBot.new
+tank.name = "Hugo"
+tank.weapon = "laser"
+tank.activate
+tank.move("test dummy")
+tank.attack
+
+sunny = SolarBot.new
+sunny.name = "Sunny"
+sunny.activate
+sunny.move("tanning bed")
