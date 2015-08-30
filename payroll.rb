@@ -35,7 +35,10 @@ class Employee
 
 end
 
-#TEST ZONE
+
+# YOU ARE NOW ENTERING THE TEST ZONE
+# Comment or uncomment as needed for code testing
+
 blake = Employee.new
 blake.name = "Blake Black"
 blake.salary = 140000
