@@ -49,6 +49,7 @@ end
 
 class HourlyEmployee < Employee
 
+  #Factory Methods for positions. update as needed
   def self.security_guard(name)
     HourlyEmployee.new(name, 19.25, 30)
   end
