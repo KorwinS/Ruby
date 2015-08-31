@@ -1,45 +1,25 @@
 #play with arrays
 
-price = [3.99, 25.00, 8.99, 10.98]
+prices = [3.99, 25.00, 8.99, 10.98]
 
-def total(price)
+def total(prices)
   amount = 0
-  index = 0
-  while index < price.length
-    amount += price[index]
-    index += 1
-  end
+  prices.each { |price| amount += price }
   amount
 end
-puts format("%.2f", total(price))
+puts format("Your Total: %.2f", total(prices))
 
-def refund(price)
+def refund(prices)
   amount = 0
-  index = 0
-  while index < price.length
-    amount -= price[index]
-    index += 1
-  end
+  prices.each { |price| amount -= price }
   amount
 end
-puts format("%.2f", refund(price))
+puts format("Your Refund: %.2f", refund(prices))
 
-def discount(price)
-  index = 0
-  while index < price.length
-    amount_off = price[index] / 3.0
+def discount(prices)
+  prices.each do |price|
+    amount_off = price / 3.0
     puts format("Your discount: %.2f", amount_off)
-    index += 1
   end
 end
-discount(price)
-
-def method_name(&my_block)
-  puts "We're in the method, about to invoke the block"
-  my_block.call
-  puts "We're back in the method"
-end
-
-method_name do
-  puts "BLOCK BLOCK BLOCK BLOCK"
-end
+discount(prices)
