@@ -13,14 +13,11 @@ class Employee
   def print_name
     puts "Name: #{@name}"
   end
-=begin
-#init the class
-  def initialize(name = "Anon", salary = 0.0)
-    self.name = name
-    self.salary = salary
 
+  def initialize(name = "Anon")
+    self.name = name
   end
-=end
+
 end
 
 class SalariedEmployee < Employee
@@ -32,6 +29,12 @@ class SalariedEmployee < Employee
       raise "A salary of #{salary} isn't valid!"
     end
     @salary = salary
+  end
+
+  #init the class
+  def initialize(name = "Anon", salary = 0.0)
+    super(name)
+    self.salary = salary
   end
 
   #print the pay stub
@@ -63,6 +66,13 @@ class HourlyEmployee < Employee
     @hours_per_week = hours_per_week
   end
 
+  #init the class
+  def initialize(name = "Anon", hourly_wage = 0.0, hours_per_week = 0.0)
+    super(name)
+    self.hourly_wage = hourly_wage
+    self.hours_per_week = hours_per_week
+  end
+
   #print the pay stub
   def print_pay_stub
     print_name
@@ -72,7 +82,6 @@ class HourlyEmployee < Employee
   end
 
 end
-
 
 # YOU ARE NOW ENTERING THE TEST ZONE
 # Comment or uncomment as needed for code testing
@@ -87,3 +96,14 @@ carl.name = "Carl Cooper"
 carl.hourly_wage = 17
 carl.hours_per_week = 38.5
 carl.print_pay_stub
+
+billy = SalariedEmployee.new
+#billy.name = "Blake Black"
+#billy.salary = 140000
+billy.print_pay_stub
+
+chris = HourlyEmployee.new
+#chris.name = "Carl Cooper"
+#chris.hourly_wage = 17
+#chris.hours_per_week = 38.5
+chris.print_pay_stub
