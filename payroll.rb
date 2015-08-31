@@ -49,6 +49,16 @@ end
 
 class HourlyEmployee < Employee
 
+  def self.security_guard(name)
+    HourlyEmployee.new(name, 19.25, 30)
+  end
+  def self.cashier(name)
+    HourlyEmployee.new(name, 12.75, 25)
+  end
+  def self.janitor(name)
+    HourlyEmployee.new(name, 10.50, 20)
+  end
+
   attr_reader :hourly_wage, :hours_per_week
 
   #wage calc
@@ -91,11 +101,14 @@ blake.name = "Blake Black"
 blake.salary = 140000
 blake.print_pay_stub
 
-carl = HourlyEmployee.new
-carl.name = "Carl Cooper"
-carl.hourly_wage = 17
-carl.hours_per_week = 38.5
+carl = HourlyEmployee.security_guard("Carl Cooper")
 carl.print_pay_stub
+
+dobby = HourlyEmployee.cashier("Dobby Elf")
+dobby.print_pay_stub
+
+moose = HourlyEmployee.janitor("Moose Trucks")
+moose.print_pay_stub
 
 billy = SalariedEmployee.new
 #billy.name = "Blake Black"
