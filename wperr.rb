@@ -11,15 +11,15 @@ attempts = 0
 #loop through curl script
 while i > 0 do
   output = system "curl #{site}"
-  attempts += 1
+  attempts += 1.0
   if output == true
-    pass += 1
+    pass += 1.0
   else
-    no_pass =+ 1
+    no_pass += 1.0
   end
 
   #format the rate
-  rate = (pass / attempts) * 100
+  rate = (pass / attempts) * 100.0
   formatted_rate = format("%.2f", rate)
 
   #display stats
