@@ -1,4 +1,5 @@
 # Test sites for bad return - KorwinS
+require 'curb'
 
 #Set Variables and get input
 print "Enter site to test: "
@@ -11,11 +12,12 @@ attempts = 0
 
 #loop through curl script
 while attempts < tries do
-  output = system "curl #{site}"
+  output = Curl.get("http://#{site}")
   attempts += 1
-  if output == true
+  if output.get == true
     pass += 1.0
   else
+    puts output.status
     no_pass += 1.0
   end
 
