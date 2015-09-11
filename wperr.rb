@@ -3,15 +3,16 @@
 #Set Variables and get input
 print "Enter site to test: "
 site = gets.chomp
-i = 1
+print "How many attempts (at 1 sec intervals): "
+tries = gets.to_i
 pass = 0
 no_pass = 0
 attempts = 0
 
 #loop through curl script
-while i > 0 do
+while attempts < tries do
   output = system "curl #{site}"
-  attempts += 1.0
+  attempts += 1
   if output == true
     pass += 1.0
   else
@@ -29,3 +30,5 @@ while i > 0 do
   #pause for 1 second
   sleep 1
 end
+
+puts "FINAL Pass: #{pass}, Fail: #{no_pass}. Success Rate: #{formatted_rate}%"
