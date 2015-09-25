@@ -51,7 +51,7 @@ rest_req(url, h_method, app_contoller)
 
 
 
-
+=begin
 # Change Email URL for PROD
 # Build JSON Payload
 json_payload = {}
@@ -64,3 +64,4 @@ def update_url
       curl.headers['Content-Type'] = 'application/json'
     end
 end
+=end
