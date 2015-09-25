@@ -34,13 +34,13 @@ end
 # List apps in Controller
 list_apps = "https://#{env}.saas.appdynamics.com/controller/rest/applications?output=JSON"
 
-# Get healthrule violations for QL WordPress for last 15 minutes
+# Get healthrule violations for for last 15 minutes
 hr_violations = "https://#{env}.saas.appdynamics.com/controller/rest/applications/59/problems/healthrule-violations?time-range-type=BEFORE_NOW&duration-in-mins=15&output=JSON"
 
-# Drop a 90K Close Event in WordPress Application
+# Drop a 90K Close Event in Application
 close_90k = "https://#{env}.saas.appdynamics.com/controller/rest/applications/59/events?eventtype=CUSTOM&customeventtype=90K&summary=90K%20Close&severity=WARN"
 
-# Drop a 90K Open Event in WordPress Application
+# Drop a 90K Open Event in Application
 open_90k = "https://#{env}.saas.appdynamics.com/controller/rest/applications/59/events?eventtype=CUSTOM&customeventtype=90KOpen&summary=90K%20Open&severity=WARN"
 
 h_method = "GET"

@@ -13,9 +13,13 @@ attempts = 0
 #loop through curl script
 while attempts < tries do
   output = Curl.get("http://#{site}")
+  output.connect_timeout=(1)
   attempts += 1
   if output.get == true
     pass += 1.0
+  elsif output.connect_timeout=(1)
+    puts output.status
+    no_pass += 1.0
   else
     puts output.status
     no_pass += 1.0
